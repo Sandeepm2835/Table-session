@@ -69,7 +69,7 @@ export class TablePageComponent {
       return num < 10 ? '0' + num : '' + num;
     };
     
-    return `${this.pad(hours)}:${this.pad(minutes)}:${this.pad(seconds)}`;
+    return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
   }
 
   pad(num: number): string {
