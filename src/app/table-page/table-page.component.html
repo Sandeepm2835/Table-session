@@ -1,0 +1,47 @@
+<div class="table-container">
+  <h2>Table Page</h2>
+
+  <div class="session-info">
+    <ul style="padding: 0;">
+      <li><span>Idle Time: {{ activeTime }}</span></li>
+    </ul>
+    <ul>
+      <li><span>Session Time: {{ sessionTime }}</span></li>
+    </ul>
+  </div>
+
+  <div class="action-btn">
+    <button (click)="addRow()" class="button-cursor button-3d" style="width: 6%">Add</button>
+    <button
+      (click)="deleteRow()"
+      class="button-cursor button-3d"
+      style="margin-left: 1rem; width: 6%"
+    >
+      Delete
+    </button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>S.No.</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.sNo }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.age }}</td>
+      </tr>
+    </tbody>
+  </table>  
+  
+  <div id="myModal" class="modal" *ngIf="overlayVisible">
+    <div class="modal-content">
+      <span class="close"></span>
+      <p>Session is idle. Click anywhere to resume.</p>
+    </div>
+  </div>
+</div>
