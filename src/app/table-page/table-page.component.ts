@@ -72,10 +72,6 @@ export class TablePageComponent {
     return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
   }
 
-  pad(num: number): string {
-    return num < 10 ? '0' + num : '' + num;
-  }
-
   generateRandomRow(): RowData {
     return {
       sNo: this.nextSNo++,
