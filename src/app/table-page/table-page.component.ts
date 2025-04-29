@@ -64,6 +64,11 @@ export class TablePageComponent {
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
+
+    const pad = (num: number): string => {
+      return num < 10 ? '0' + num : '' + num;
+    };
+    
     return `${this.pad(hours)}:${this.pad(minutes)}:${this.pad(seconds)}`;
   }
 
