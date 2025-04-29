@@ -32,19 +32,16 @@ export class TablePageComponent {
   constructor() {}
 
   ngOnInit(): void {
-    this.startSessionTimer();
-    this.startActiveTimer();
+    this.onStartTimer();
     this.generateInitialData(5);
   }
 
-  startSessionTimer() {
+  onStartTimer() {
     this.sessionTimerSubscription = interval(1000).subscribe(() => {
       this.sessionTime = this.formatTime(this.sessionStartTime);
     });
-  }
 
-  startActiveTimer() {
-    this.activeTimerSubscription = interval(1000).subscribe(() => {
+     this.activeTimerSubscription = interval(1000).subscribe(() => {
       if (!this.isIdle) {
         this.activeTime = this.formatTime(this.lastInteractionTime);
       }
